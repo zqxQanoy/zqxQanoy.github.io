@@ -34,3 +34,14 @@ tags:
    如果你的项目有加入版本控制，那可以到项目根目录下，查看隐藏文件夹， 发现.git文件夹，找到其中的config文件，就可以修改其中的git remote origin地址了。
    - 显示当前所有远程库的详细信息
      git remote -v
+    ## 查看分支差异
+	查看 dev 有，而 master 中没有的：                           
+	git log dev ^master 
+	同理查看 master 中有，而 dev 中没有的内容：
+	git log master ^dev
+
+	查看 dev 中比 master 中多提交了哪些内容：
+
+	git log master..dev
+	注意，列出来的是两个点后边（此处即dev）多提交的内容。同理，想知道 master 比 dev 多提交了什么：
+	git log dev..master
